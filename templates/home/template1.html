@@ -1,0 +1,133 @@
+{% extends 'foot.html' %}
+{% load static %}
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Portfolio</title>
+      {% block body_block %}
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    .header {
+      padding: 80px;
+      text-align: center;
+      background: lightblue;
+      color: white;
+    }
+    
+    .navbar {
+      overflow: hidden;
+      background-color: black;
+      position: sticky;
+      top:0;
+    }
+    
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px 20px;
+      text-decoration: none;
+    }
+    
+    .navbar a.right {
+      float: right;
+    }
+    
+    .navbar a:hover {
+      background-color: #98b4d4;
+      color: white;
+    }
+    
+    .navbar a.active {
+      background-color: lightgrey;
+      color: black;
+    }
+    
+    .row {  
+      
+      display: flex;
+      
+      flex-wrap: wrap;
+    }
+    
+    .side {
+      flex: 35%;
+      background-color: silver;
+      padding: 20px;
+    }
+    
+    .main {   
+      flex: 65%;
+      background-color: white;
+      padding: 20px;
+    }
+    
+    .fakeimg {
+      background-color:#92a8d1;
+      width: 100%;
+      padding: 20px;
+    }
+    
+    </style>
+    </head>
+    <body bgcolor="grey" style="font-family: Calibri;">
+    
+    <div class="navbar">
+          <a href="">Portfolio</a>
+          <a href="" class='active'><img src="{% static 'home/images/home.jpg' %}" height=15 width=15>&nbsp&nbspHome</a>
+          <a href="{% url 'education' %}">Education</a>
+          <a href="{% url 'about' %}">About</a>
+          <a href="{% url 'login' %}" class=right><img src="{% static 'home/images/login.jpg' %}" height=15 width=15>&nbsp&nbspLogin</a>
+    </div>
+    
+    <div class="row">
+      <div class="side">
+        <img src="{% static 'home/images/img.jpg' %}" height="270" width="300" style="border-radius: 50%;transform:rotate(90deg);"></img>
+        <h2><b><i>{{name}}</i></b></h2>
+        <hr>
+      <h4><img src="{% static 'home/images/student.jpg' %}" height=18 width=18>&nbsp&nbsp&nbspStudent</h4>
+      <h4><img src="{% static 'home/images/location.jpg' %}" height=18 width=16>&nbsp&nbsp&nbspBangalore,India</h4>
+      <h4><img src="{% static 'home/images/mail.jpg' %}" height=18 width=22>&nbsp&nbspadithya@gmail.com</h4>
+      <h4><img src="{% static 'home/images/phone.jpg' %}" height=18 width=18>&nbsp&nbsp&nbsp123456789</h4>
+        <hr>
+        <h3><img src="{% static 'home/images/skills.jpg' %}" height=25 width=25>&nbsp&nbspSkills</h3>
+        <div class="fakeimg" style="height:60px;">Web development</div><br>
+        <div class="fakeimg" style="height:60px;">Programming</div><br>
+        <div class="fakeimg" style="height:60px;">Photography</div>
+        <br><hr>
+        <h3><img src="{% static 'home/images/lang.jpg'%}" height=25 width=25>&nbsp&nbspLanguages</h3>
+        <div class="fakeimg" style="height:60px;">English</div><br>
+        <div class="fakeimg" style="height:60px;">Kannada</div><br>
+        <div class="fakeimg" style="height:60px;">Hindi</div>
+      </div>
+       
+      <div class="main">
+        <fieldset style="background-color:azure;">
+        <legend><h2><i><img src="{% static 'home/images/education.jpg' %}" height=25 width=25>&nbsp&nbspEducation</i></h2></legend>
+        <h3><b>PES University</b></h3>
+        <img src="{% static 'home/images/calender.jpg' %}" height=25 width=25><p style="color: chocolate;"><i>2019-present</i></p>
+        <hr>
+        <h3><b>JKV Composite College</b></h3>
+        <img src="{% static 'home/images/calender.jpg' %}" height=25 width=25><p style="color: chocolate;"><i>2017-2019</i></p style="color: chocolate;">
+        <hr><h3><b>GVES</b></h3>
+        <img src="{% static 'home/images/calender.jpg' %}" height=25 width=25><p style="color: chocolate;"><i>2007-2017</i></p style="color: chocolate;">
+        </fieldset><br><br>
+        <fieldset style="background-color:lavenderblush;">
+          <legend><h2><i><img src="{% static 'home/images/education.jpg' %}" height=25 width=25>&nbsp&nbspCertificates</i></h2></legend>
+          <h4><b>Full stack Web development using Django</b></h4>
+          <hr>
+          <h4><b>Recommendation engine using ML</b></h4>
+          <hr><h4><b>Data structures</b></h4>
+          </fieldset>
+      </div>
+    </div>
+
+    {%endblock%}
+    </body>
+    </html>

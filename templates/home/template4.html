@@ -1,0 +1,60 @@
+{% extends 'foot.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block body_block %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        .navbar {
+      overflow: hidden;
+      background-color: black;
+      position: sticky;
+      
+      top:0;
+    }
+    
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px 20px;
+      text-decoration: none;
+    }
+    
+    .navbar a.right {
+      float: right;
+    }
+    
+    .navbar a:hover {
+      background-color: #98b4d4;
+      color: white;
+    }
+    
+    .navbar a.active {
+      background-color: lightgrey;
+      color: black;
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Portfolio</a>
+        <a href="#"><img src="{% static 'home/images/home.jpg' %}" height=15 width=15>&nbsp&nbspHome</a>
+        <a href="{% url 'education' %}">Education</a>
+        <a href="{% url 'about' %}" class=active>About</a>
+        <a href="{% url 'login' %}" class=right><img src="{% static 'home/images/login.jpg' %}" height=15 width=15>&nbsp&nbspLogin</a>
+    </div><br><br>
+    <img src="{% static 'home/images/img.jpg' %}" height="270" width="300" style="border-radius: 50%;transform:rotate(90deg);"></img>
+        <h2><b><i>Adithya M S</i></b></h2>
+        <hr>
+      <h4><img src="{% static 'home/images/student.jpg' %}" height=18 width=18>&nbsp&nbsp&nbspStudent</h4>
+      <h4><img src="{% static 'home/images/location.jpg' %}" height=18 width=16>&nbsp&nbsp&nbspBangalore,India</h4>
+      <h4><img src="{% static 'home/images/mail.jpg' %}" height=18 width=22>&nbsp&nbspadithya@gmail.com</h4>
+      <h4><img src="{% static 'home/images/phone.jpg' %}" height=18 width=18>&nbsp&nbsp&nbsp123456789</h4><br><br>
+      {%endblock%}
+</body>
+</html>

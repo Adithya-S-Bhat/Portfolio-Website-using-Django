@@ -1,0 +1,80 @@
+{% extends 'foot.html' %}
+{% load static %}
+<html>
+  {% block body_block %}
+<title>Login</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+.header {
+  padding: 80px;
+  text-align: center;
+  background: lightblue;
+  color: white;
+}
+
+
+
+
+.navbar {
+  overflow: hidden;
+  background-color: black;
+  position: sticky;
+  
+  top:0;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px 20px;
+  text-decoration: none;
+}
+
+.navbar a.right {
+  float: right;
+}
+
+.navbar a:hover {
+  background-color: grey;
+  color: white;
+}
+
+.navbar a.active {
+  background-color: lightgrey;
+  color: black;
+}
+
+
+</style>
+</head>
+
+
+<body style="background-color:lightyellow;">
+  
+  <div class="navbar">
+    <a href="#">Portfolio</a>
+    <a href="#"><img src="{% static 'home/images/home.jpg' %}" height=15 width=15>&nbsp&nbspHome</a>
+    <a href="{% url 'education' %}">Education</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'login' %}" class="right active"><img src="{% static 'home/images/login.jpg' %}" height=15 width=15>&nbsp&nbspLogin</a>
+  </div>
+<br><br><br>
+<fieldset>
+<legend>Login</legend>
+<form><br>UserName:-
+<input type="text"><br><br>
+Password:-
+<input type="text"><br><br>
+<a href="#"><button type="button" style="background-color:lightgrey;">Submit</button></a><br>
+</fieldset>
+</form><br><br>
+{%endblock%}
+
+</body>
+</html>

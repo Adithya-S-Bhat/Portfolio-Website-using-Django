@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: teal;
+    }
+    </style>
+</head>
+<body>
+    {%block body_block%}
+
+    {%endblock%}
+    <div class="footer">
+        <h4>Find me on social media.</h4>
+        <img src="{% static 'home/images/face.jpg' %}" height=25 width=25>
+        <img src="{% static 'home/images/insta.jpg' %}" height=25 width=25>
+        <img src="{% static 'home/images/link.jpg' %}" height=25 width=25>
+    </div>
+</body>
+</html>
